@@ -26,6 +26,18 @@ Amb RStudio es poden fer gràfics i totes aquestes coses però al fer l'script h
 
 ![Furts Alt Empordà](furts_ae.png)
 
+    dades_ae <- denuncies_ae %>% filter(grepl("salut", Delicte)) %>% group_by(AnyMes) %>% summarise(coneguts=sum(Coneguts), resolts=sum(Resolts) )
+
+    ggplot(dades_ae, aes(x=Any)) +
+       geom_line(aes(y=coneguts, color="coneguts")) +
+       geom_line(aes(y=resolts, color="resolts")) +
+       labs(title="Delictes contra la salut pública", subtitle="Alt Empordà", y="coneguts/resolts", x="Any", caption="Font: Mossos d'Esquadra") +
+       scale_colour_manual("", breaks = c("coneguts", "resolts"), values = c("red", "green")) +
+        geom_point(aes(y=coneguts, color="coneguts"))  +
+        geom_point(aes(y=resolts, color="resolts"))
+
+![Furts Alt Empordà](salut_ae.png)
+
 ### Funcionament
 
 El primer és donar-li permisos d'execució

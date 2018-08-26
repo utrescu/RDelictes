@@ -16,7 +16,15 @@ Script
 
 Cal tenir R, i les llibreries instal·lades perquè dóni algun resultat.
 
-> Amb RStudio es poden fer gràfics i totes aquestes coses però al fer l'script he optat per només mostrar les dades per pantalla.
+Amb RStudio es poden fer gràfics i totes aquestes coses però al fer l'script he optat per només mostrar les dades per pantalla.
+
+    ggplot(dades_ae, aes(x=Any)) +
+       geom_line(aes(y=coneguts, color="coneguts")) +
+       geom_line(aes(y=resolts, color="resolts")) +
+       labs(title="Estadístiques de Furts", subtitle="Alt Empordà", y="coneguts/resolts", x="Any", caption="Font: Mossos d'Esquadra") +
+        scale_colour_manual("", breaks = c("coneguts", "resolts"), values = c("red", "green"))
+
+![Furts Alt Empordà](furts_ae.png)
 
 ### Funcionament
 

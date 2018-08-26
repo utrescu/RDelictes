@@ -10,13 +10,11 @@ Les dades estan extretes de les dades obertes dels Mossos d'Esquadra. La llicèn
 - Descarregat el 25 d'agost de 2018
 - Data de darrera actualització: 43270
 
-Script
-
----
+## Requeriments
 
 Cal tenir R, i les llibreries instal·lades perquè dóni algun resultat.
 
-Amb RStudio es poden fer gràfics i totes aquestes coses però al fer l'script he optat per només mostrar les dades per pantalla.
+Amb RStudio es poden fer gràfics a partir de totes les dades, però al fer l'script he optat per només mostrar les dades resumides per pantalla.
 
     ggplot(dades_ae, aes(x=Any)) +
        geom_line(aes(y=coneguts, color="coneguts")) +
@@ -38,7 +36,7 @@ Amb RStudio es poden fer gràfics i totes aquestes coses però al fer l'script h
 
 ![Furts Alt Empordà](salut_ae.png)
 
-### Funcionament
+## Funcionament
 
 El primer és donar-li permisos d'execució
 
